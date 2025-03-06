@@ -1,0 +1,14 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://bvvax74e0bv8y"]
+
+[ext_resource type="Shader" path="res://scripts/flash_alpha.gdshader" id="1_slf75"]
+
+[resource]
+resource_local_to_scene = true
+shader = ExtResource("1_slf75")
+shader_parameter/color_a = Color(0, 0, 0, 0.698039)
+shader_parameter/color_b = Color(0.82, 0.451, 0, 0.545098)
+shader_parameter/colors_affect_alpha = false
+shader_parameter/flash_amount = 1.0
+shader_parameter/flash_speed = 16.0
+shader_parameter/transparency = 1.0
+shader_parameter/intensity = 0.0

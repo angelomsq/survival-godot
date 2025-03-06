@@ -1,0 +1,60 @@
+[gd_scene load_steps=9 format=3 uid="uid://wndec48gqjb5"]
+
+[ext_resource type="Texture2D" uid="uid://2alkg7pwwopl" path="res://assets/objects/Traps/Shooting_trap/Shooting_trap_down.png" id="1_r0bxr"]
+[ext_resource type="Script" path="res://scripts/shooting_trap.gd" id="1_vtkbg"]
+[ext_resource type="Texture2D" uid="uid://ipjdy31f2b2u" path="res://assets/objects/Traps/Shooting_trap/Shooting_trap_left.png" id="2_qjnyf"]
+[ext_resource type="Texture2D" uid="uid://bhyyrh2u16da1" path="res://assets/objects/Traps/Shooting_trap/Shooting_trap_right.png" id="3_s7mdd"]
+[ext_resource type="Texture2D" uid="uid://b1184imsxn4xi" path="res://assets/objects/Traps/Shooting_trap/Shooting_trap_up.png" id="4_3j4rf"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vmloh"]
+atlas = ExtResource("1_r0bxr")
+region = Rect2(0, 0, 15, 15)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_y642c"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vmloh")
+}],
+"loop": true,
+"name": &"down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_qjnyf")
+}],
+"loop": true,
+"name": &"left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_s7mdd")
+}],
+"loop": true,
+"name": &"right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_3j4rf")
+}],
+"loop": true,
+"name": &"up",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7mxyf"]
+size = Vector2(15, 12)
+
+[node name="ShootingTrap" type="StaticBody2D"]
+script = ExtResource("1_vtkbg")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_y642c")
+animation = &"down"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 2)
+shape = SubResource("RectangleShape2D_7mxyf")

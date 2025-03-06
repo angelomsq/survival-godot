@@ -1,0 +1,77 @@
+[gd_scene load_steps=11 format=3 uid="uid://k1xxu8umomxm"]
+
+[ext_resource type="Texture2D" uid="uid://b2tu8kjnd7dj6" path="res://assets/objects/Torch.png" id="1_8asdi"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n6obo"]
+atlas = ExtResource("1_8asdi")
+region = Rect2(0, 0, 8, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p1lol"]
+atlas = ExtResource("1_8asdi")
+region = Rect2(8, 0, 8, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xqkq8"]
+atlas = ExtResource("1_8asdi")
+region = Rect2(16, 0, 8, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3n525"]
+atlas = ExtResource("1_8asdi")
+region = Rect2(24, 0, 8, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6oyq6"]
+atlas = ExtResource("1_8asdi")
+region = Rect2(32, 0, 8, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qdsqc"]
+atlas = ExtResource("1_8asdi")
+region = Rect2(40, 0, 8, 10)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_34ogf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n6obo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p1lol")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xqkq8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3n525")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6oyq6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qdsqc")
+}],
+"loop": true,
+"name": &"default",
+"speed": 6.0
+}]
+
+[sub_resource type="Gradient" id="Gradient_3tb8f"]
+offsets = PackedFloat32Array(0, 0.6)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_y8gj1"]
+gradient = SubResource("Gradient_3tb8f")
+width = 32
+height = 32
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0, 0)
+
+[node name="Torch" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_34ogf")
+autoplay = "default"
+frame_progress = 0.0243655
+offset = Vector2(0, -2)
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+color = Color(1, 1, 1, 0.372549)
+texture = SubResource("GradientTexture2D_y8gj1")

@@ -1,0 +1,306 @@
+[gd_scene load_steps=16 format=3 uid="uid://cllrayyyhr0o7"]
+
+[ext_resource type="Script" path="res://scripts/game_hud.gd" id="1_7t1yu"]
+[ext_resource type="PackedScene" uid="uid://ck81trlxkmns0" path="res://scenes/gui/heart_gui.tscn" id="1_j527n"]
+[ext_resource type="Texture2D" uid="uid://o2f14h8074bv" path="res://assets/ui/player-slot.png" id="2_mw37a"]
+[ext_resource type="Texture2D" uid="uid://1o0dlke2anol" path="res://assets/ui/player-icon.png" id="3_ljbgo"]
+[ext_resource type="Texture2D" uid="uid://xp6qnrqyxmcq" path="res://assets/ui/attr-label-alpha.png" id="5_ve411"]
+[ext_resource type="FontFile" uid="uid://ehedvuov7l8n" path="res://assets/fonts/04B_24__.TTF" id="6_c7hnj"]
+[ext_resource type="PackedScene" uid="uid://b3eajbjnduiiw" path="res://scenes/gui/coin_gui.tscn" id="7_im5lq"]
+[ext_resource type="PackedScene" uid="uid://b0nlk5s2e1ejs" path="res://scenes/gui/skull_gui.tscn" id="8_ntbbf"]
+[ext_resource type="Script" path="res://scripts/time_clock.gd" id="10_1xrcr"]
+[ext_resource type="FontFile" uid="uid://bg5ec5dc82sun" path="res://assets/fonts/04B_08__.TTF" id="11_jm1on"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_4ryu2"]
+font = ExtResource("6_c7hnj")
+font_size = 8
+
+[sub_resource type="LabelSettings" id="LabelSettings_swhwy"]
+font = ExtResource("11_jm1on")
+font_size = 8
+
+[sub_resource type="LabelSettings" id="LabelSettings_1vfc4"]
+font = ExtResource("6_c7hnj")
+
+[sub_resource type="LabelSettings" id="LabelSettings_m3hoy"]
+font = ExtResource("11_jm1on")
+font_size = 8
+
+[sub_resource type="LabelSettings" id="LabelSettings_qssdl"]
+font = ExtResource("6_c7hnj")
+
+[node name="GameHUD" type="CanvasLayer"]
+script = ExtResource("1_7t1yu")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="Control"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 24.0
+offset_bottom = 24.0
+texture = ExtResource("2_mw37a")
+
+[node name="PlayerIcon" type="Sprite2D" parent="Control/TextureRect"]
+position = Vector2(11, 11)
+texture = ExtResource("3_ljbgo")
+
+[node name="HFlowContainer" type="HFlowContainer" parent="Control"]
+layout_mode = 0
+offset_left = 22.0
+offset_top = 1.0
+offset_right = 122.0
+offset_bottom = 33.0
+theme_override_constants/h_separation = -7
+theme_override_constants/v_separation = -8
+
+[node name="HeartGUI" parent="Control/HFlowContainer" instance=ExtResource("1_j527n")]
+layout_mode = 2
+
+[node name="HeartGUI2" parent="Control/HFlowContainer" instance=ExtResource("1_j527n")]
+layout_mode = 2
+
+[node name="HeartGUI3" parent="Control/HFlowContainer" instance=ExtResource("1_j527n")]
+layout_mode = 2
+
+[node name="HeartGUI4" parent="Control/HFlowContainer" instance=ExtResource("1_j527n")]
+layout_mode = 2
+
+[node name="HeartGUI5" parent="Control/HFlowContainer" instance=ExtResource("1_j527n")]
+layout_mode = 2
+
+[node name="HeartGUI6" parent="Control/HFlowContainer" instance=ExtResource("1_j527n")]
+layout_mode = 2
+
+[node name="HeartGUI7" parent="Control/HFlowContainer" instance=ExtResource("1_j527n")]
+layout_mode = 2
+
+[node name="HeartGUI8" parent="Control/HFlowContainer" instance=ExtResource("1_j527n")]
+layout_mode = 2
+
+[node name="HeartGUI9" parent="Control/HFlowContainer" instance=ExtResource("1_j527n")]
+layout_mode = 2
+
+[node name="HeartGUI10" parent="Control/HFlowContainer" instance=ExtResource("1_j527n")]
+layout_mode = 2
+
+[node name="HeartGUI11" parent="Control/HFlowContainer" instance=ExtResource("1_j527n")]
+layout_mode = 2
+
+[node name="HeartGUI12" parent="Control/HFlowContainer" instance=ExtResource("1_j527n")]
+layout_mode = 2
+
+[node name="HeartGUI13" parent="Control/HFlowContainer" instance=ExtResource("1_j527n")]
+layout_mode = 2
+
+[node name="HeartGUI14" parent="Control/HFlowContainer" instance=ExtResource("1_j527n")]
+layout_mode = 2
+
+[node name="HeartGUI15" parent="Control/HFlowContainer" instance=ExtResource("1_j527n")]
+layout_mode = 2
+
+[node name="HeartGUI16" parent="Control/HFlowContainer" instance=ExtResource("1_j527n")]
+layout_mode = 2
+
+[node name="HeartGUI17" parent="Control/HFlowContainer" instance=ExtResource("1_j527n")]
+layout_mode = 2
+
+[node name="HeartGUI18" parent="Control/HFlowContainer" instance=ExtResource("1_j527n")]
+layout_mode = 2
+
+[node name="HeartGUI19" parent="Control/HFlowContainer" instance=ExtResource("1_j527n")]
+layout_mode = 2
+
+[node name="HeartGUI20" parent="Control/HFlowContainer" instance=ExtResource("1_j527n")]
+layout_mode = 2
+
+[node name="VFlowContainer" type="VFlowContainer" parent="Control"]
+custom_minimum_size = Vector2(56, 96)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 0.533
+offset_left = -60.0
+offset_top = 3.0
+offset_right = -4.0
+offset_bottom = 3.05999
+grow_horizontal = 0
+reverse_fill = true
+
+[node name="CoinsDisplay" type="Control" parent="Control/VFlowContainer"]
+custom_minimum_size = Vector2(56, 11)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Control/VFlowContainer/CoinsDisplay"]
+custom_minimum_size = Vector2(48, 16)
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -51.0
+offset_top = -8.5
+offset_right = -3.0
+offset_bottom = 7.5
+grow_horizontal = 0
+grow_vertical = 2
+texture = ExtResource("5_ve411")
+stretch_mode = 4
+
+[node name="CoinsLabel" type="Label" parent="Control/VFlowContainer/CoinsDisplay"]
+custom_minimum_size = Vector2(40, 12)
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -52.0
+offset_top = -5.5
+offset_right = -12.0
+offset_bottom = 5.5
+grow_horizontal = 0
+grow_vertical = 2
+text = "00000000"
+label_settings = SubResource("LabelSettings_4ryu2")
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Control" type="Control" parent="Control/VFlowContainer/CoinsDisplay"]
+custom_minimum_size = Vector2(11, 11)
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -10.0
+offset_top = -5.0
+offset_bottom = 5.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="CoinGUI" parent="Control/VFlowContainer/CoinsDisplay/Control" instance=ExtResource("7_im5lq")]
+
+[node name="KillsDisplay" type="Control" parent="Control/VFlowContainer"]
+custom_minimum_size = Vector2(56, 11)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Control/VFlowContainer/KillsDisplay"]
+custom_minimum_size = Vector2(48, 16)
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -51.0
+offset_top = -8.5
+offset_right = -3.0
+offset_bottom = 7.5
+grow_horizontal = 0
+grow_vertical = 2
+texture = ExtResource("5_ve411")
+stretch_mode = 4
+
+[node name="KillsLabel" type="Label" parent="Control/VFlowContainer/KillsDisplay"]
+custom_minimum_size = Vector2(40, 12)
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -52.0
+offset_top = -5.5
+offset_right = -12.0
+offset_bottom = 5.5
+grow_horizontal = 0
+grow_vertical = 2
+text = "00000000"
+label_settings = SubResource("LabelSettings_4ryu2")
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Control" type="Control" parent="Control/VFlowContainer/KillsDisplay"]
+custom_minimum_size = Vector2(11, 11)
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -10.0
+offset_top = -5.0
+offset_bottom = 5.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="SkullGUI" parent="Control/VFlowContainer/KillsDisplay/Control" instance=ExtResource("8_ntbbf")]
+
+[node name="TimeTitle" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -12.0
+offset_top = 3.0
+offset_right = 10.0
+offset_bottom = 11.0
+grow_horizontal = 2
+text = "TIME"
+label_settings = SubResource("LabelSettings_swhwy")
+
+[node name="TimeClock" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -35.5
+offset_right = 35.5
+offset_bottom = 34.0
+grow_horizontal = 2
+text = "00:00"
+label_settings = SubResource("LabelSettings_1vfc4")
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("10_1xrcr")
+
+[node name="ScoreTitleLabel" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 46.0
+offset_top = 3.0
+offset_right = 76.0
+offset_bottom = 13.0
+grow_horizontal = 2
+text = "Score"
+label_settings = SubResource("LabelSettings_m3hoy")
+horizontal_alignment = 1
+uppercase = true
+
+[node name="ScoreLabel" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 30.0
+offset_top = 1.0
+offset_right = 94.0
+offset_bottom = 33.0
+grow_horizontal = 2
+text = "00000000"
+label_settings = SubResource("LabelSettings_qssdl")
+horizontal_alignment = 2
+vertical_alignment = 1

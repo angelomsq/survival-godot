@@ -1,0 +1,56 @@
+[gd_scene load_steps=9 format=3 uid="uid://1mnu8bqlqsmr"]
+
+[ext_resource type="Script" path="res://scripts/spike_trap.gd" id="1_c2lle"]
+[ext_resource type="Texture2D" uid="uid://c2hywmtkutwfl" path="res://assets/objects/Traps/Spike_trap.png" id="2_6wh57"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tdl4e"]
+atlas = ExtResource("2_6wh57")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o7i74"]
+atlas = ExtResource("2_6wh57")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7ex1n"]
+atlas = ExtResource("2_6wh57")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eydoj"]
+atlas = ExtResource("2_6wh57")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_r72xg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tdl4e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o7i74")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7ex1n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eydoj")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rskyi"]
+size = Vector2(16, 16)
+
+[node name="SpikeTrap" type="Area2D"]
+script = ExtResource("1_c2lle")
+impact = 0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_r72xg")
+frame = 3
+frame_progress = 1.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_rskyi")
+debug_color = Color(1, 0, 0.113725, 0.117647)

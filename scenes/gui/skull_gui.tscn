@@ -1,0 +1,59 @@
+[gd_scene load_steps=9 format=3 uid="uid://b0nlk5s2e1ejs"]
+
+[ext_resource type="Texture2D" uid="uid://betjgnmfenyxo" path="res://assets/ui/skull-gui.png" id="1_cwr20"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_duf08"]
+atlas = ExtResource("1_cwr20")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wlyrv"]
+atlas = ExtResource("1_cwr20")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fi4d0"]
+atlas = ExtResource("1_cwr20")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d7sx2"]
+atlas = ExtResource("1_cwr20")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ctkwb"]
+atlas = ExtResource("1_cwr20")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4sjuq"]
+atlas = ExtResource("1_cwr20")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5y0lv"]
+animations = [{
+"frames": [{
+"duration": 10.0,
+"texture": SubResource("AtlasTexture_duf08")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wlyrv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fi4d0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d7sx2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ctkwb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4sjuq")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="SkullGUI" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_5y0lv")
+autoplay = "default"
+centered = false
+offset = Vector2(-2, -2)

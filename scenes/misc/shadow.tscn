@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://bau64aw2osgqw"]
+
+[ext_resource type="Texture2D" uid="uid://q1ubxk2e0ibp" path="res://assets/base-shadow.png" id="1_mlxto"]
+
+[node name="Shadow" type="Sprite2D"]
+texture = ExtResource("1_mlxto")
+offset = Vector2(0, 2)

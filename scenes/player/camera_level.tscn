@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://dxa50iem4abk7"]
+
+[node name="CameraLevel" type="Camera2D"]
+process_callback = 0
+limit_left = -500
+limit_top = -500
+limit_right = 500
+limit_bottom = 500
+position_smoothing_enabled = true
+editor_draw_limits = true
