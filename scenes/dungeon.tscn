@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=4 uid="uid://bce8wc7cup30q"]
+[gd_scene load_steps=13 format=4 uid="uid://bce8wc7cup30q"]
 
 [ext_resource type="Script" path="res://scripts/game_level.gd" id="1_iihyv"]
 [ext_resource type="TileSet" uid="uid://6wiaha6o6h1f" path="res://assets/dungeon.tres" id="1_qn3q8"]
@@ -9,8 +9,9 @@
 [ext_resource type="PackedScene" uid="uid://wndec48gqjb5" path="res://scenes/misc/shooting_trap.tscn" id="4_5onwa"]
 [ext_resource type="PackedScene" uid="uid://jmjaeien3xul" path="res://scenes/misc/moving_floor.tscn" id="4_i7wyg"]
 [ext_resource type="PackedScene" uid="uid://dm3xe17t7u5od" path="res://scenes/gui/game_over_screen.tscn" id="5_bap3t"]
+[ext_resource type="PackedScene" uid="uid://cpo5j42a4m1cf" path="res://scenes/misc/vessel.tscn" id="6_is0q3"]
 
-[sub_resource type="Shader" id="Shader_5i5la"]
+[sub_resource type="Shader" id="Shader_e3n1a"]
 resource_local_to_scene = true
 code = "// Flashing Shader
 // Overlays/Mixes between an animated color A and color B (alpha of each controls mix amount)
@@ -80,9 +81,9 @@ void fragment() {
 	COLOR = mix(in_color, out_color, intensity);
 }"
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_grond"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bf8jq"]
 resource_local_to_scene = true
-shader = SubResource("Shader_5i5la")
+shader = SubResource("Shader_e3n1a")
 shader_parameter/color_a = Color(0, 0, 0, 0.698039)
 shader_parameter/color_b = Color(0.82, 0.451, 0, 0.545098)
 shader_parameter/colors_affect_alpha = false
@@ -256,6 +257,27 @@ position = Vector2(296, 264)
 [node name="SpikeTrap12" parent="Map/Spikes" instance=ExtResource("3_hr8m4")]
 position = Vector2(344, 264)
 
+[node name="Vessel" parent="Map" instance=ExtResource("6_is0q3")]
+position = Vector2(264, 104)
+
+[node name="Vessel4" parent="Map" instance=ExtResource("6_is0q3")]
+position = Vector2(280, 104)
+
+[node name="Vessel5" parent="Map" instance=ExtResource("6_is0q3")]
+position = Vector2(296, 104)
+
+[node name="Vessel6" parent="Map" instance=ExtResource("6_is0q3")]
+position = Vector2(328, 104)
+
+[node name="Vessel7" parent="Map" instance=ExtResource("6_is0q3")]
+position = Vector2(360, 104)
+
+[node name="Vessel2" parent="Map" instance=ExtResource("6_is0q3")]
+position = Vector2(312, 104)
+
+[node name="Vessel3" parent="Map" instance=ExtResource("6_is0q3")]
+position = Vector2(344, 104)
+
 [node name="CameraLevel" parent="." instance=ExtResource("3_3wneb")]
 process_mode = 1
 position = Vector2(141, 93)
@@ -305,7 +327,7 @@ type = 3
 
 [node name="Player" parent="Y-SortLayer" instance=ExtResource("2_tjofn")]
 y_sort_enabled = true
-material = SubResource("ShaderMaterial_grond")
+material = SubResource("ShaderMaterial_bf8jq")
 position = Vector2(141, 93)
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="Y-SortLayer/Player"]

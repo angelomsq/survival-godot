@@ -9,7 +9,6 @@ func _init() -> void:
 
 func _ready() -> void:
 	self.connect("area_entered", _on_area_entered)
-	#self.connect("area_entered", _on_floor_entered)
 	
 func _on_area_entered(hitbox: HitBox) -> void:
 	print("hitbox owner: ", hitbox.owner)
@@ -25,9 +24,4 @@ func _on_area_entered(hitbox: HitBox) -> void:
 		owner.damage_shader()
 	
 	if hitbox.owner.has_method("add_score"):
-		hitbox.owner.add_score(1)  
-
-#func _on_floor_entered(floor: MovingFloor) -> void:
-	#print(floor)
-	#owner.position += floor.direction.normalized() * floor.speed
-	#pass
+		hitbox.owner.add_score(1) # TODO: Calculate Score based on the Hurtbox Owner

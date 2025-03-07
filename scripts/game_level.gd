@@ -31,8 +31,13 @@ func _ready() -> void:
 	spawn_timer.start()
 
 func _on_spawn_timeout() -> void:
-	var rand_amount = randi_range(1,2)
-	var rand_enemy = randi_range(0,1)
+	var enemy_types = 1
+	var enemy_qtd = 2
+	if PlayerManager.player.score > 1000:
+		enemy_types = 2
+		enemy_qtd = 4
+	var rand_amount = randi_range(1,enemy_qtd)
+	var rand_enemy = randi_range(0,enemy_types)
 	var nav_map = navigation_tilemap.get_navigation_map()
 	for i in rand_amount:
 		var new_enemy = enemies[rand_enemy].instantiate()

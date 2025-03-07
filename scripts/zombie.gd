@@ -2,9 +2,13 @@ class_name Zombie
 extends Enemy
 
 @onready var vision_shape: CollisionShape2D = $VisionArea/CollisionShape2D
-
+@export var item_rates: Dictionary = {
+	"coin": 20,
+	"heart": 20
+}
 func _ready() -> void:
 	_init_body()
+	dropable = Dropable.new(self, item_rates)
 	animation_tree = $AnimationTree
 	animation_tree.active = true
 	

@@ -1,0 +1,66 @@
+[gd_scene load_steps=11 format=3 uid="uid://cpo5j42a4m1cf"]
+
+[ext_resource type="Texture2D" uid="uid://r4h2di36f5o2" path="res://assets/objects/Vessel.png" id="1_j0vu5"]
+[ext_resource type="Script" path="res://scripts/vessel.gd" id="1_umscj"]
+[ext_resource type="Texture2D" uid="uid://b4il41ykh2p1x" path="res://assets/fire-effects.png" id="2_bw38w"]
+[ext_resource type="Script" path="res://scripts/hurtbox.gd" id="4_1ikox"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3lww1"]
+atlas = ExtResource("2_bw38w")
+region = Rect2(160, 80, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u7n6h"]
+atlas = ExtResource("2_bw38w")
+region = Rect2(176, 80, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_14vtw"]
+atlas = ExtResource("2_bw38w")
+region = Rect2(192, 80, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pv0d5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_j0vu5")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3lww1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u7n6h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_14vtw")
+}],
+"loop": false,
+"name": &"destroy",
+"speed": 8.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_uca2b"]
+radius = 8.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fadg5"]
+radius = 7.0
+
+[node name="Vessel" type="StaticBody2D"]
+script = ExtResource("1_umscj")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_pv0d5")
+autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_uca2b")
+
+[node name="HurtBox" type="Area2D" parent="."]
+script = ExtResource("4_1ikox")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
+shape = SubResource("CircleShape2D_fadg5")
+debug_color = Color(0.709814, 0.486249, 0, 0.42)

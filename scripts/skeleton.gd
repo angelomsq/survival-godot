@@ -2,9 +2,14 @@ class_name Skeleton
 extends Enemy
 
 @onready var vision_shape: CollisionShape2D = $VisionArea/CollisionShape2D
+@export var item_rates: Dictionary = {
+	"coin": 20,
+	"heart": 40
+}
 
 func _ready() -> void:
 	_init_body()
+	dropable = Dropable.new(self, item_rates)
 	animation_tree = $AnimationTree
 	animation_tree.active = true
 	
@@ -16,7 +21,7 @@ func _ready() -> void:
 	#var range_end = 5+(level-1)*2
 	#health = randi_range(range_start, range_end)
 	
-	vision_shape.shape.radius =  80 * level
+	vision_shape.shape.radius =  180 * level
 	is_smart = true
 
 
