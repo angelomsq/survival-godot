@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://jmjaeien3xul" path="res://scenes/misc/moving_floor.tscn" id="4_i7wyg"]
 [ext_resource type="PackedScene" uid="uid://dm3xe17t7u5od" path="res://scenes/gui/game_over_screen.tscn" id="5_bap3t"]
 
-[sub_resource type="Shader" id="Shader_vc4pf"]
+[sub_resource type="Shader" id="Shader_5i5la"]
 resource_local_to_scene = true
 code = "// Flashing Shader
 // Overlays/Mixes between an animated color A and color B (alpha of each controls mix amount)
@@ -80,9 +80,9 @@ void fragment() {
 	COLOR = mix(in_color, out_color, intensity);
 }"
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_8wqxx"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_grond"]
 resource_local_to_scene = true
-shader = SubResource("Shader_vc4pf")
+shader = SubResource("Shader_5i5la")
 shader_parameter/color_a = Color(0, 0, 0, 0.698039)
 shader_parameter/color_b = Color(0.82, 0.451, 0, 0.545098)
 shader_parameter/colors_affect_alpha = false
@@ -305,7 +305,7 @@ type = 3
 
 [node name="Player" parent="Y-SortLayer" instance=ExtResource("2_tjofn")]
 y_sort_enabled = true
-material = SubResource("ShaderMaterial_8wqxx")
+material = SubResource("ShaderMaterial_grond")
 position = Vector2(141, 93)
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="Y-SortLayer/Player"]

@@ -6,7 +6,7 @@ var target: Node2D = null
 var vision_area: VisionArea
 var navigation_agent: NavigationAgent2D
 var is_smart := false
-const SMOKE_EFFECT = preload("res://scenes/Effects/smoke_effect.tscn")
+const SMOKE_EFFECT = preload("res://scenes/effects/smoke_effect.tscn")
 const COIN = preload("res://scenes/misc/coin.tscn")
 const HEART = preload("res://scenes/misc/heart.tscn")
 const drop_types = [
